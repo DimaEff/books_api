@@ -22,7 +22,6 @@ describe('Config', () => {
     });
     it('should success validating', () => {
       process.env = validEnv;
-      console.log('process.env', process.env);
       expect(appConfig()).toBeTruthy();
     });
     it('should unsuccess validation', () => {
@@ -40,7 +39,6 @@ describe('Config', () => {
     });
     it('should success validating', () => {
       process.env = validEnv;
-      console.log('process.env', process.env);
       expect(databaseConfig).toBeTruthy();
     });
     it('should unsuccess validation', () => {
