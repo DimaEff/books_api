@@ -1,17 +1,10 @@
-import databaseConfig from '@/config/database.config';
-import { Inject, Injectable } from '@nestjs/common';
-import { ConfigType } from '@nestjs/config';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  constructor(
-    @Inject(databaseConfig.KEY)
-    private dbConfig: ConfigType<typeof databaseConfig>,
-  ) {}
+  constructor() {}
 
   getHello() {
-    const dbPort = this.dbConfig.DB_PORT;
-    const dbHost = this.dbConfig.DB_HOST;
-    return { dbPort, dbHost };
+    return 'Hello!';
   }
 }
