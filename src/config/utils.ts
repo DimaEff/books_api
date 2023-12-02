@@ -15,8 +15,8 @@ export const parseOrThrowConfigValidationError = <
 
   // for specification of types
   if (res.success === false) {
-    logger.error(res.error, new Error().stack);
-    return;
+    logger.error(res.error);
+    throw new Error('You must to set up all needed environment`s variables');
   }
 
   return data;
