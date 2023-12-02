@@ -1,3 +1,4 @@
+import { Book } from '@/books/models/book.model';
 import { databaseConfig } from '@/config';
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigType } from '@nestjs/config';
@@ -22,6 +23,8 @@ export class SequelizeConfigService implements SequelizeOptionsFactory {
     username: this.dbConfig.DB_USERNAME,
     password: this.dbConfig.DB_PASSWORD,
     database: this.dbConfig.DB_NAME,
-    models: [],
+    autoLoadModels: true,
+    synchronize: true,
+    models: [Book],
   });
 }

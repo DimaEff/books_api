@@ -6,6 +6,7 @@ import { appConfig } from '@/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { SequelizeConfigModule } from './sequelize-config/sequelize-config.module';
 import { SequelizeConfigService } from '@/sequelize-config/sequelize-config.service';
+import { BooksModule } from './books/books.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { SequelizeConfigService } from '@/sequelize-config/sequelize-config.serv
       imports: [SequelizeConfigModule],
       useExisting: SequelizeConfigService,
     }),
+    BooksModule,
   ],
   controllers: [AppController],
   providers: [AppService],
