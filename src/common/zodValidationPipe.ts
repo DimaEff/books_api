@@ -3,10 +3,10 @@ import {
   BadRequestException,
   PipeTransform,
 } from '@nestjs/common';
-import { ZodObject } from 'zod';
+import { ZodType } from 'zod';
 
 export class ZodValidationPipe implements PipeTransform {
-  constructor(private schema: ZodObject<any>) {}
+  constructor(private schema: ZodType<any>) {}
 
   // for future
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

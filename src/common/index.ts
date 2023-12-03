@@ -6,3 +6,4 @@ export {
 } from '@/common/constants';
 export { PaginationDto, paginationSchema } from '@/common/dto/pagination.dto';
 export { ZodValidationPipe } from '@/common/zodValidationPipe';
+export * from '@/common/dto/primitives.dto';
