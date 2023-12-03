@@ -1,0 +1,8 @@
+export const PAGINATION_PAGE_SIZE = 10;
+export const PAGINATION_PAGE_NUMBER = 0;
+export const MIN_PAGINATION_PAGE_SIZE = 1;
+export const MAX_PAGINATION_PAGE_SIZE = 100;
+export const MIN_PAGINATION_PAGE_NUMBER = 0;
+
+export const MIN_STRING_LENGTH = 3;
+export const MIDDLE_STRING_LENGTH = 128;
