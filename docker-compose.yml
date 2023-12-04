@@ -1,6 +1,22 @@
 version: '3.1'
 
 services:
+  nestjs-app:
+    build:
+      context: .
+    env_file: .env
+    environment:
+      DB_HOST: db
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 3000:3000
+    command: npm run start:dev
+    depends_on:
+      - db
+    restart: always
+
   db:
     container_name: pg_container
     image: postgres
@@ -13,7 +29,7 @@ services:
       POSTGRES_HOST: ${DB_HOST}
       POSTGRES_PORT: ${DB_PORT}
     ports:
-      - "5432:5432"
+      - '5432:5432'
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
       - ./init/db.sql:/docker-entrypoint-initdb.d/db.sql
@@ -26,4 +42,4 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
-      - "5050:80"
+      - '5050:80'
